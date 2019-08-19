@@ -1,0 +1,245 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+
+<head>
+<title></title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="@@description">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<link rel="manifest" href="http://localhost:3000/site.webmanifest">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="theme-color" content="#fafafa">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="http://localhost:3000/assets/styles/css/normalize.css">
+<link rel="stylesheet" href="http://localhost:3000/assets/modules/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://localhost:3000/assets/modules/fontawesome/css/all.min.css">
+
+<!-- CSS One Theme -->
+<link rel="stylesheet" href="http://localhost:3000/assets/styles/css/main.css">
+
+ <!-- CSS Main Nav -->
+<link href='http://localhost:3000/assets/styles/css/navs/main.css' rel='stylesheet' type='text/css'>
+
+ <!-- CSS Sidebar Nav -->
+ <link href='http://localhost:3000/assets/styles/css/navs/sidebar.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS Footer Nav -->
+  <link href='http://localhost:3000/assets/styles/css/navs/footer.css' rel='stylesheet' type='text/css'>
+
+   <!-- CSS Social Share  -->
+  <link rel="stylesheet" href="http://localhost:3000/assets/modules/rrssb/css/rrssb.css" />
+  <link rel="stylesheet" type="text/css" href="http://localhost:3000/assets/modules/jssocials/jssocials.css" />
+  <link rel="stylesheet" type="text/css" href="http://localhost:3000/assets/modules/jssocials/jssocials-theme-flat.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+  <header id="header" class="full-header clearfix sticky-header">
+    <div id="header-wrap" class="">
+        <div class="container clearfix">
+            <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+            <div id="logo">
+                <a href="index.html" class="standard-logo"><img src="http://localhost:3000/assets/images/logo.png" alt="Canvas Logo"></a>
+                <a href="index.html" class="retina-logo"><img
+                        src="http://localhost:3000/assets/images/layout_set_logo.png" alt="Canvas Logo"></a>
+            </div>
+        </div>
+    </div>
+
+    @@include('./navs/main.html')
+</header>
+    <div>
+      
+<h1>The Welcome 2</h1>
+
+      <h2><label>@@name</label></h2>
+<label>@@age</label>
+<strong>@@socials.fb</strong>
+<strong>@@socials.tw</strong>
+
+      <!-- Site Links-->
+      <div >
+      <h2>Site Links</h2>
+      <a href="multipage/agency/index.html">Agency</a> 
+    </div>
+      <!-- Add your page content here -->
+      <p>Travel, Gym, Media Agency, Music, Barber,  Pets, Portfolio, Constructuion, Seo, App Landing, E-Commere, Cource
+        Conferance, Non-Profit,
+        Magazine, Resume, Cage, SPA, Wedding, Shopk, Events, Car Listing, Business, Real Estate, Medical, One Page,
+        Corporate, CoWorking, Recipies,
+        Ajax, Rental, News, Photography, Media Agency, Blog, Restaurant</p>
+
+      <p>All the stuffs you need, none of the clusters</p>
+
+      <p>Award winning Multi-Purpose & Powerful Bootstrap 4.x based Template with over 100 Pages, Multi-Page & One-Page
+        Layouts with over 1000 UI Elements Features.</p>
+
+        
+<!--
+#if ($theme_settings.lateral-nav == "Right")
+	#set ($lat_nav_pos = "right-nav")
+#else
+	#set ($lat_nav_pos = "left-nav")
+#end
+-->
+<div id="cd-lateral-nav-wrapper">
+	<a href="#cd-nav" class="cd-nav-trigger $lat_nav_pos">Menu
+	  <span class="cd-nav-icon"></span>
+
+	  <svg x="0px" y="0px" width="45px" height="45px" viewBox="0 0 54 54">
+	    <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+	  </svg>
+	</a>
+
+<nav id="cd-lateral-nav" class="$lat_nav_pos">
+	<ul class="cd-navigation">
+
+		<!--#foreach ($nav_item in $nav_items)-->
+			<li class="item-menu #if ($nav_item.hasChildren()) item-has-children #end">
+				<a href="$nav_item.getURL()" $nav_item.getTarget()>
+					<span>$nav_item.icon() $nav_item.getName()</span>
+				</a>
+				<!--#if ($nav_item.hasChildren())-->
+				<ul class="sub-menu">
+						<!--#foreach ($nav_child in $nav_item.getChildren())-->
+						<!--#if ($nav_child.isSelected())
+							<li class="selected sub">-->
+						<!--#else-->
+							<li class=" sub">
+						<!--#end-->
+						<a href="$nav_child.getURL()" $nav_child.getTarget()>$nav_child.getName()</a>
+						</li>
+					<!--#end-->
+					</ul>
+				<!--#end-->
+			</li>
+		<!--#end-->
+
+	<ul class="cd-navigation cd-single-item-wrapper">
+		<!--#if ($is_signed_in)-->
+				<li><a href="#0">$user.getGreeting()</a></li>
+				<li><a href="$themeDisplay.getURLSignOut()">Sign Out</a></li>
+		<!--#else-->
+			<li class="cd-navigation-sign-in"><a href="$themeDisplay.getURLSignIn()">Sign In</a></li>
+		<!--#end-->
+	</ul> <!-- cd-single-item-wrapper -->
+
+	<div id="cd-lateral-nav-social" class="cd-navigation socials">
+
+	</div>
+</nav>
+<div>
+
+    </div>
+    <footer>
+    <div class="footer-about"></div>
+    <div class="footer-copy-right">
+        <div class="footer-logo"><img src="http://localhost:3000/assets/images/logo.png" /></div>
+        <p>2019 © All Rights Reserved.</p>
+    </div>
+    <div class="footer-navbar">
+        <ul>
+                <li>About</li>
+                <li>Services</li>
+                <li>Google</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy & Policy</li>
+                <li>Marketing</li>
+                <li>Support Forum</li>
+                <li>Themes</li>
+        </ul>
+    </div>
+    <div class="footer-sociallinks">
+        <div>
+            <h3>Follow Us</h3>
+            <!-- Social Icons -->
+            <ul>
+                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-google-plus"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-contact-form"></div>
+    <div class="footer-subscribe-form"></div>
+    <div class="footer-tag-cloud"></div>
+    <div class="footer-blog-post"></div>
+</footer>
+ 
+ 
+ 
+ 
+      
+<div id="pageToTop"><a href="#pageTop"></a></div>
+<div class="d-flex justify-content-center" id="ajax-loader">
+    <div class="spinner-grow" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+  <!-- JS Global Compulsory -->
+  <script src="http://localhost:3000/assets/modules/modernizr.min.js"></script>
+  <script src="http://localhost:3000/assets/modules/jquery.min.js"></script>
+  <script src="http://localhost:3000/assets/modules/jquery-migrate.min.js"></script>
+  <script src="http://localhost:3000/assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <script src="http://localhost:3000/assets/modules/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.localscroll.min.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.easing.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.ui.touch-punch.min.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.nicescroll.min.js"></script>
+
+  <!-- JS One Theme -->
+  <script src="http://localhost:3000/assets/scripts/src/main.js"></script>
+
+  <!-- JS Custom -->
+  <script src="http://localhost:3000/assets/scripts/src/custom.js"></script>
+
+  <!-- JS Custom Notification -->
+  <script type="text/javascript" src="http://localhost:3000/assets/scripts/src/navs/main.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/scripts/src/navs/sidebar.js"></script>
+  
+ <!-- JS Social Share -->
+  <script src="http://localhost:3000/assets/modules/rrssb/js/rrssb.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+    
+      $('.rrssb-buttons').rrssb({
+        title: 'This is the email subject and/or tweet text',
+        url: 'https://rrssb.netlify.com/',
+    
+        description: 'Longer description used with some providers',
+        emailBody: 'Usually email body is just the description + url, but you can customize it if you want'
+      });
+    });
+    </script>
+
+<script src="http://localhost:3000/assets/modules/jssocials/jssocials.min.js"></script>
+<script>
+    $("#share").jsSocials({
+        shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+    });
+</script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+      </script>
+      <script src="https:://www.google-analytics.com/analytics.js" async></script>
+  </div>
+</body>

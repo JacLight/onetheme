@@ -1,0 +1,40 @@
+<div style="clear:both"></div>
+<footer id="footer" role="contentinfo">
+<div id="footer-limit">
+	#if ($theme_settings.footer-content != '')
+	<div id='footer-inner-1'>
+		#set ($footer_content = $journalContentUtil.getContent($group_id, $theme_settings.footer-content, null, "$locale", $theme_display))
+		#if ($footer_content)
+			$footer_content
+		#else
+			$theme_settings.footer-content
+		#end
+	</div>
+	#end
+	
+	<div id='footer-inner-2'>
+	#if ($theme_settings.show-copyright == true)
+		<div class="footer-copyright">$theme_settings.footer-copyright $year</div>
+	#end
+	
+	#if ($theme_settings.show-legal == true)
+		<a href="/legal">#language ("legal")</a>
+	#end
+	
+	#if ($theme_settings.show-footer-navbar == true)
+		#set ($footer_navbar = "#sitepages()")
+		<div class="footer-navbar">$footer_navbar</div>
+	#end
+			
+	
+
+	<p class="powered-by">
+		#language ("powered-by") <a href="http://www.websitemint.net" rel="external">Websitemint</a>
+	</p>
+	
+	<div style='clear:both'></div>
+	
+	</div>
+	<div style='clear:both'></div>
+</div>
+</footer>

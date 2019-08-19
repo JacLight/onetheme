@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>6.2.0+</version>
+	</compatibility>
+
+	<company-limit>
+			<company-includes/>
+			<company-excludes />
+	</company-limit>
+
+	<theme id="theme8" name="Theme 8" >
+		<template-extension>vm</template-extension>
+
+		<settings>
+			<setting configurable="true" key="show-headbar" type="checkbox" value="true" />
+			<setting configurable="true" key="show-logo" type="checkbox" value="true" />
+			<setting configurable="true" key="show-header-content" type="checkbox" value="false" />
+			<setting configurable="true" key="show-header-socialshare" type="checkbox" value="true" />
+			<setting configurable="true" key="show-site-name" type="checkbox" value="false" />
+			<setting configurable="true" key="show-page-title" type="checkbox" value="false" />
+			<setting configurable="true" key="show-navbar" type="checkbox" value="true" />
+			<setting configurable="true" key="navbar-effect" options="None,Effect-1,Effect-2,Effect-3,Effect-4,Effect-5,Effect-6,Effect-7,Effect-8,Effect-9,Effect-10,Effect-11,Effect-12,Effect-13,Effect-14,Effect-15,Effect-16,Effect-17,Effect-18,Effect-19,Effect-20,Effect-21" type="select" value="None"/>
+			<setting configurable="true" key="lateral-nav" options="None,Left,Right" type="select" value="None"/>
+			<setting configurable="true" key="show-home-link" type="checkbox" value="true" />
+			<setting configurable="true" key="show-login" type="checkbox" value="true" />
+			<setting configurable="true" key="show-search" type="checkbox" value="false" />
+			<setting configurable="true" key="show-goto-top" type="checkbox" value="true" />
+			<setting configurable="true" key="show-language" options="None,Flags,Drop Down,Long Text,Short Text" type="select" value="None"></setting>
+			<setting configurable="true" key="show-breadcrumb" type="checkbox" value="false" />
+
+			<setting configurable="true" key="portlet-setup-show-borders-default" type="checkbox" value="false" />
+			<setting configurable="true" key="bullet-style" options="dots,arrows" type="select" value="dots" />
+			<setting configurable="false" key="show-site-name-default" value="true" />
+			<setting configurable="false" key="show-site-name-supported" value="true" />
+
+			<setting configurable="true" key="show-body-content" type="checkbox" value="false" />
+
+			<setting configurable="true" key="show-footer" type="checkbox" value="true" />
+            <setting configurable="true" key="show-footer-logo" type="checkbox" value="false" />
+			<setting configurable="true" key="show-footer-contact-form" type="checkbox" value="false" />
+			<setting configurable="true" key="show-footer-socialshare" type="checkbox" value="true" />
+			<setting configurable="true" key="show-footer-content" type="checkbox" value="false" />
+			<setting configurable="true" key="show-legal" type="checkbox" value="false" />
+			<setting configurable="true" key="footer-copyright" type="text" value="© [sitename] [year], All Rights Reserved" />
+			<setting configurable="true" key="show-copyright" type="checkbox" value="true" />
+			<setting configurable="true" key="show-footer-navbar" type="checkbox" value="true" />
+			<setting configurable="true" key="show-footer-navbar-sub" type="checkbox" value="false" />
+		</settings>
+
+		<roles>
+			<role-name>User</role-name>
+		</roles>
+	</theme>
+</look-and-feel>

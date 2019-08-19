@@ -1,0 +1,63 @@
+@charset "UTF-8";
+@media (max-width: 979px) {
+  .aui .portlet-dockbar {
+    position: absolute; }
+
+  .aui #heading {
+    top: 0;
+    position: relative; }
+
+  .aui #heading .site-title {
+    font-size: 26px;
+    position: relative;
+    width: 80px;
+    top: 0px;
+    left: 10px; }
+
+  .aui #wrapper {
+    margin: 0; }
+
+  .aui #footer {
+    padding: 5em 1em; }
+
+  .aui #footer img.logo {
+    width: 80px; }
+
+  .aui #footer #footer-socialshare {
+    top: -3em; }
+
+  .aui #footer .powered-by {
+    top: 0px; }
+
+  .aui .portlet-dockbar {
+    position: absolute; }
+
+  .aui .dockbar-split .dockbar, .aui .dockbar {
+    float: right;
+    height: auto;
+    position: relative;
+    z-index: 401;
+    height: 27px;
+    margin-right: 0px; }
+
+  .aui .dockbar-split .dockbar .navbar-inner .btn-navbar, .aui .dockbar .navbar-inner .btn-navbar {
+    background: transparent;
+    border: 0;
+    float: left;
+    font-size: 20px;
+    padding: 5px 10px; }
+
+  .aui .dockbar .navbar-inner .container .btn-navbar .user-avatar-image {
+    top: 0;
+    width: 20px; }
+
+  .aui div.sign-in {
+    display: none; }
+
+  .aui #navigation.open {
+    left: 0;
+    top: 10px; } }
+@media (max-width: 500px) {
+  .aui #footer img.logo {
+    display: none; } }
+

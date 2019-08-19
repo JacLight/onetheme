@@ -1,0 +1,169 @@
+#set ($css_class = "${css_class} dockbar-split")
+
+#*
+This file allows you to override and define new Velocity variables.
+*#
+
+#* Header Content *#
+#set($show-show-goto-top = $theme.getSetting("show-show-goto-top"))
+#set($header-content-id = $theme.getSetting("header-content-id"))
+
+#set($portlet-setup-show-borders-default = $theme.getSetting("portlet-setup-show-borders-default"))
+#set($bullet-style = $theme.getSetting("bullet-style"))
+
+## ---------- Logo --------- ##
+
+#if (($company.getLogoId() == 0) && $use_company_logo && $theme_settings.display-company-logo != true)
+	##set ($site_logo = "${images_folder}/custom/logo.png")
+	##set ($site_logo_height = 23)
+	##set ($site_logo_width = 108)
+#end
+
+## ---------- Navbar Effect CSS --------- ##
+#if ($theme_settings.navbar-effect.toLowerCase() != 'none')
+	#set ($nav_css_class = $nav_css_class + " cl-" + $theme_settings.navbar-effect.toLowerCase())
+#end
+
+## --------- layouttpl css class ---------- ##
+
+#set ($css_class = $css_class + " layout-"+$layoutTypePortlet.getLayoutTemplate().getLayoutTemplateId())
+
+## ----------  Sign In ---------- ##
+
+#if ($theme_settings.show-login != true)
+	#set ($css_class = $css_class + " hide-login")
+#end
+
+## ----------  Search ---------- ##
+
+#if ($theme_settings.show-search != true)
+	#set ($css_class = $css_class + " hide-search")
+#end
+
+## ----------  Hide Dockbar ---------- ##
+
+#if ($theme_settings.dockbar-transparent == true)
+	#set ($css_class = $css_class + " dockbar-transparent")
+#end
+
+## ----------  Hide Chat portlet ---------- ##
+
+#if ($theme_settings.display-chat == false)
+ #set ($css_class = $css_class + " hide-chat")
+#end
+
+
+## ----------  Language bar ---------- ##
+#set ($languageDisplayStyle = 0)
+#if ($theme_settings.show-language == "None")
+	#set ($css_class = $css_class + " hide-language")
+#elseif ($theme_settings.show-language=="Flags")
+	#set ($languageDisplayStyle = 0)
+#elseif ($theme_settings.show-language=="Drop Down")
+	#set ($languageDisplayStyle = 3)
+#elseif ($theme_settings.show-language=="Long Text")
+	#set ($languageDisplayStyle = 1)
+#elseif ($theme_settings.show-language=="Short Text")
+	#set ($languageDisplayStyle = 2)
+#end
+
+## ----------  Date ---------- ##
+#set($my_date = $dateTool.getDate())
+#set($year = $dateTool.getYear())
+#set($year_string = $portal.getClass().forName("java.lang.String").valueOf($year))
+
+
+## ----------  Page Title note page title exist naturally ---------- ##
+#set ($layoutId = $request.get("theme-display").get("plid"))
+
+#set ($page_title = $themeDisplay.getLayout().getName($locale))
+#set ($page_name = $themeDisplay.getLayout().getFriendlyURL())
+#if ($page_name)
+	#set( $page_css_name = $page_name.replaceAll("/", "") )
+	#set( $page_css_name = $page_css_name.replaceAll(" ", "") )
+	#set ($css_class = $page_css_name + " " + $css_class)
+#end
+
+## ----------  Page Has Custom Theme ---------- ##
+#if ($themeDisplay.getLayout().isInheritLookAndFeel() != true)
+	#set ($page_instance_name = $page_css_name.trim() + "")
+    #set ($page_instance_name = $page_instance_name.replaceAll("_", ""))
+#else
+	#set ($page_instance_name = "")
+#end
+
+
+## ----------  Site Name & copy right ---------- ##
+#set ($site_name = $themeDisplay.getCompany().getName())
+#set ($temp = $theme_settings.footer-copyright.replaceAll('\[sitename\]', $site_name))
+#set ($footer_copyright = $temp.replaceAll('\[year\]', $year_string))
+
+
+## ---------- Macros ---------- ##
+
+#macro( getwebcontent $content_name)
+	#set ($VOID = $velocityPortletPreferences.setValue('portlet-setup-show-borders', 'false'))
+	#set ($myPortletId = "56_INSTANCE_" + $page_instance_name + $content_name)
+	$theme.runtime($myPortletId, '', $velocityPortletPreferences.toString())
+	#set ($VOID = $velocityPortletPreferences.reset())
+#end
+
+
+#macro( getquickcontact )
+
+#end
+
+
+#macro( getnavbar )
+	<h2>
+		<span>Site Pages</span>
+	</h2>
+	<ul>
+		#foreach ($nav_item in $nav_items)
+			#set ($nav_item_class = "item-" + $velocityCount)
+
+			#if ($velocityCount == 1)
+				#set ($nav_item_class = $nav_item_class + " first")
+			#elseif (!$velocityHasNext)
+				#set ($nav_item_class = $nav_item_class + " last")
+			#end
+
+			#if ($nav_item.isSelected())
+				#set ($nav_item_class = $nav_item_class + " selected")
+			#end
+
+			<li class="$nav_item_class">
+				<a href="$nav_item.getURL()" $nav_item.getTarget()>
+					<span>$nav_item.icon() $nav_item.getName()</span>
+				</a>
+			</li>
+
+			#if ($theme_settings.show-footer-navbar-sub == true && $nav_item.hasChildren())
+				<ul class="child-menu">
+				#foreach ($nav_child in $nav_item.getChildren())
+					#if ($nav_child.isSelected())
+						<li class="selected sub">
+					#else
+						<li class=" sub">
+					#end
+				<a href="$nav_child.getURL()" $nav_child.getTarget()>$nav_child.getName()</a>
+				</li>
+				#end
+				</ul>
+			#end
+		#end
+	</ul>
+	<div style="clear:both"></div>
+#end
+
+
+## ----------  Old Page Title note page title exist naturally ---------- ##
+## get the service for layout
+##set($layoutSetService = $serviceLocator.findService("com.liferay.portal.service.LayoutLocalService"))
+
+## get the service for layout
+##set($layoutService = $serviceLocator.findService("com.liferay.portal.service.LayoutLocalService"))
+
+##convert the layout id into long
+##set ($layoutLong = $getterUtil.getLong($layoutId))
+##set($layout = $layoutService.getLayout($layoutLong))

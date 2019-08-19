@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>ONE- Documentation</title>
+    <link rel="stylesheet" href="./style/style.css" type="text/css">
+</head>
+
+<body>
+<div id="page">
+
+	<div class="wrapper clearfix">
+	
+    	<div id="sidebar" class="right_float">
+        	<h3><strong>Table of Contents</strong></h3>
+            
+            <ul id="mainnav">
+				<li><a href="#preface"><strong>Preface</strong></a></li>
+				<li><a href="#support"><strong>Support</strong></a></li>
+				<li><a href="#introduction"><strong>Introduction</strong></a></li>
+				<li><a href="#generalrules"><strong>General Rules</strong></a></li>
+				<li><a href="#header"><strong>Header</strong></a></li>
+				<li><a href="#services"><strong>Services</strong></a></li>
+				<li><a href="#video"><strong>Video</strong></a></li>
+				<li><a href="#callToAction"><strong>Call to Action</strong></a></li>
+				<li><a href="#gallery"><strong>Gallery</strong></a></li>
+				<li><a href="#features"><strong>Features</strong></a></li>
+				<li><a href="#blog"><strong>Blog</strong></a></li>
+				<li><a href="#team"><strong>Team</strong></a></li>
+				<li><a href="#map"><strong>Map</strong></a></li>
+				<li><a href="#contact"><strong>Contact</strong></a></li>
+				<li><a href="#CSS"><strong>CSS</strong></a></li>
+				<li><a href="#Javascript"><strong>Javascript</strong></a></li>
+        <li><a href="#Voice"><strong>Voice Control</strong></a></li>
+				<li><a href="#fonts"><strong>Fonts</strong></a></li>
+				<li><a href="#sources"><strong>Sources</strong></a></li>
+				<li><a href="#contact"><strong>Contact</strong></a></li>
+            	
+            </ul>
+        </div>
+    
+    
+        <div id="content" class="left_float">
+        	<h1><strong>ONE- Documentation</strong></h1>
+            
+            <div id="preface" class="section">
+            	<h4 class="sectiontitle"><strong>Thanks</strong></h4>
+                <p>
+                First of all, a big thanks for purchasing this template.  This document includes a guide and general information about the template.  Feel free to contact us if you have any questions that are beyond the scope of this document.
+                <br />
+                <strong><i>José and Tomasz</i></strong>
+                </p>
+            </div>
+
+
+            <div id="support" class="section">
+            	<h4 class="sectiontitle"><strong>Support</strong></h4>
+                <p>
+                Please read the documentation before seeking support.  If you have any questions that are beyond the scope of this document you can still contact me by using the contact form on the themeforest profil page. <a href="http://themeforest.net/user/SpabRice">SpabRice</a>.  Please enter the name of the item you've bought in the textmessage.<br />
+                <strong>Do not use the comment section on the themeforest item page.  This will slow down the support process</strong>
+                </p>
+                <p>
+                <strong>Important</strong>: Theme support does not include any sort of customizations for you or your client.</strong>
+                </p>
+            </div>
+            
+            
+          <div id="introduction" class="section">
+           	<h4 class="sectiontitle"><strong>Introduction</strong></h4>
+            	<p>
+            	You bought an HTML / CSS template, so you need some basic knowledge for those 2 languages.  The Best way is to play around with the different elements/sections but  you find some helpfull tips and explanations how this template is build up and works. <br>
+				<b>Please compare all the explanation from this file with the original files to have a better understanding.</b>
+            	</p>
+          </div>
+
+          <div id="generalrules" class="section">
+           	<h4 class="sectiontitle"><strong>Introduction</strong></h4>
+            	<p>
+            		These are general classes, id's or tags which you will find several times in almost all html files.
+            	</p>
+
+            	<p>
+            		Every part of  website is wrapped up in section tag. Every section tag has predefined margin and custom styling that provides better readability.
+
+            		<code>
+            			&lt;section class="gallery" id="gallery"&gt; <br />
+      					&lt;div class="container"&gt; <br />
+      					... <br />
+      					&lt;/div&gt; <br />
+      					&lt;/section&gt; <br />
+            		</code>
+
+
+            		On top of every section you can place title of section. 
+
+            		<code>
+				       &lt;div class="row headline"&gt; <br />
+				          &lt;h1&gt;Our portfolio projects&lt;/h1&gt; <br />
+				          &lt;hr /&gt; <br />
+				        &lt;/div&gt; <br />
+				    </code>
+
+          </div>
+
+          <div id="rtl" class="section">
+            <h4 class="sectiontitle"><strong>RTL text</strong></h4>
+              <p>
+                From version 1.2 ONE is compatible with RTL text.
+              </p>
+
+              <p>
+                To activate it, add <strong>.rtl</strong> class to <strong>&lt;body&gt;</strong> tag.
+
+                <code>
+                  &lt;body class="home <strong>rtl</strong>" dir="rtl"&gt; <br />
+                </code>
+                
+                Be aware that with RTL text direction you can only use vertical slider. It will change direction of sliding automatically.
+
+          </div>
+
+
+          <div id="header" class="section">
+         	<h4 class="sectiontitle"><strong>Header</strong></h4>
+
+         		<p>
+         			Header is using two parts- one for slider in background, and one displaying navigation and logo.
+         		</p>
+         		To create new slide, create new .swiper-slide div inside of .swiper-wrapper. It should look something like that:
+         			<code>
+						&lt;div class="swiper-wrapper"&gt; <br />
+						&lt;div class="swiper-slide" style="background-image:url('img/background_Image.png')"&gt;...&lt;/div&gt; <br />
+						&lt;/div&gt; <br />
+					</code>
+
+				<p>
+					Thanks to applying background-image, you can create responsive slide, with parallax effect on image.
+					If you wish to create text, or other content visible on slide, just put it inside of .swiper-slide tag. It would be automatically aligned and formatted to be responsive.
+				</p>
+          </div>
+
+          <div id="services" class="section">
+				<h4 class="sectiontitle"><strong>Services</strong></h4>
+
+				<p>
+					Services section is stylised with services class.
+				</p>
+				<code>
+					&lt;section class="services"&gt;...&lt;/section&gt;
+				</code>
+				<p>
+				This section also uses slider. To insert new slide, use standard Bootstrap markup.
+				Inside of
+				</p>
+				<code>
+					&lt;div class="carousel-inner"&gt;
+				</code>
+				insert new slides just as you would do with Bootstrap Carousel,
+
+				<code>
+					&lt;div class="item"&gt;
+				</code>
+          </div>
+
+
+          <div id="video" class="section">
+         	<h4 class="sectiontitle"><strong>Header</strong></h4>
+         		<p>
+         			ONE allows placing full width HTLM5 Video. To do so, create &lt;section class="video"&gt; and place
+
+         			<code>
+         				&lt;video id="vid1"&gt;
+						&lt;source src="videos/videoSource.mp4" type="video/mp4"&gt;
+						&lt;/video&gt;
+					</code>
+         		</p>
+          </div>
+
+          <div id="callToAction" class="section">
+         	<h4 class="sectiontitle"><strong>Header</strong></h4>
+         		<p>
+         			Call to action in the simplest section of the ONE.
+					You can create on following this markup:
+					<code>
+						&lt;section class="callToAction"&gt; <br />
+						... <br />
+						&lt;/section&gt; <br />
+					</code>
+					And placing headlines or buttons inside of it.
+         		</p>
+          </div>
+
+          <div id="gallery" class="section">
+         	<h4 class="sectiontitle"><strong>Gallery</strong></h4>
+         		<p>
+         			Gallery on the other hand is the most complicated of sections.
+					Create section using
+					<code>
+						&lt;section class="gallery"&gt;
+					</code>
+					Then, using data-path-hover attribute on hover element you can specify the path of hover shape. The ONE comes with triangle as it’s shape, and it’s declared as:
+					<code>
+						&lt;figure data-path-hover="m 0 0 L 100 100 L 100 100 L 0 100 z"&gt;
+					</code>
+					Notice how two of the vertexes shows in one place, that’s because we are morphing rectangle into triangle.
+					If you want to customize starting shape, you can do it using path element. Rectangle code looks like this:
+					<code>
+						&lt;path class="background" d="M 0 75 L 100 75 L 100 100 L 0 100 z"/&gt; <br />
+						&lt;/path&gt;
+					</code>
+					After creating place for the description of image, you can now create one. Use &lt;figcaption&gt;.
+
+					Gallery also supports touch slider. Create slides just like in header, creating &lt;div class="swiper-slide"&gt; for each of the pages.
+         		</p>
+          </div>
+
+          <div id="Features" class="section">
+         	<h4 class="sectiontitle"><strong>Features</strong></h4>
+         		<p>
+         			Features section is created by placing &lt;section class="features"&gt;  in HTML code.
+					To enable scrolling effects add scrollAnimation class to this section.
+         		</p>
+          </div>
+
+           <div id="Blog" class="section">
+         	<h4 class="sectiontitle"><strong>Blog</strong></h4>
+         		<p>
+         			&lt;section class="blog"&gt; creates blog section. Use &lt;article&gt; for each of the articles. Place thumbnail inside of &lt;figure&gt;.
+         		</p>
+          </div>
+
+
+          <div id="Team" class="section">
+         	<h4 class="sectiontitle"><strong>Team</strong></h4>
+         		<p>
+         			Team comes with custom carousel.
+					After creating section with &lt;section class="team"&gt;, you can insert new members using &lt;div class="member"&gt; inside of &lt;div class="team-carousel"&gt;.
+         		</p>
+          </div>
+
+           <div id="Map" class="section">
+         	<h4 class="sectiontitle"><strong>Map</strong></h4>
+         		<p>
+         			Map is using original Google Maps API. Functions managing it are located inside of Javascript script.js file. You can edit details of infobox inside of &lt;div id="infobox"&gt; in HTML.
+         		</p>
+          </div>
+
+          <div id="Contact" class="section">
+         	<h4 class="sectiontitle"><strong>Contact</strong></h4>
+         		<p>
+         			After placing &lt;section class="contact"&gt; inside of your HTML, you can then create input fields using &lt;input type="text" class="form-control" placeholder="Your text"&gt;
+         		</p>
+          </div>
+
+
+
+          <div id="CSS" class="section">
+         	<h4 class="sectiontitle"><strong>CSS Files</strong></h4>
+         		<p>
+         			Used css extension language
+
+					The ONE is built using the newest SASS library. You can get your copy for free here: http://sass-lang.com/ .
+					For your convenience, or lack of SASS knowledge there is also compiled style.css file inside of /css/ folder.
+         		</p>
+
+         		<p>
+         			<h3>Files</h3>
+
+					SASS source files are placed inside of /css/scss/ folder.
+
+<strong>					_blog.scss</strong> <br />
+
+					Styling of single blog page. <br />
+
+					<strong>_callToAction.scss</strong> <br />
+
+					Styling of call to action section. <br />
+
+					<strong>_contact.scss</strong> <br />
+
+					Styling of contact section <br />
+
+					<strong>_features</strong> <br />
+
+					Styling of features section <br />
+
+					<strong>_font-awesome.scss</strong> <br />
+
+					Font awesome file, for easier including in source file. <br />
+
+					<strong>_footer</strong> <br />
+
+					Styling of footer <br />
+
+					<strong>_fromblog.scss</strong> <br />
+
+					Styling of blog section on home page. <br />
+
+					<strong>_gallery_single.scss</strong> <br />
+
+					Styling of single photo page. <br />
+
+					<strong>_gallery.scss</strong> <br />
+
+					Styling of gallery section on home page <br />
+
+					<strong>_header.scss</strong> <br />
+
+					Styling of header <br />
+
+					<strong>_loader.scss</strong> <br />
+
+					Styling of page loading animation <br />
+
+					<strong>_map.scss</strong> <br />
+
+					Helping styles for Google Maps <br />
+
+					<strong>_powerSlider.scss</strong> <br />
+
+					Styling for header slider (slider mechanics mostly) <br />
+
+					<strong>_services.scss</strong> <br />
+
+					Styling of services section <br />
+
+					<strong>_team.scss</strong> <br />
+
+					Styling of team section <br />
+
+					<strong>_video.scss</strong> <br />
+
+					Styling of full width video section <br />
+
+					<strong>style.scss</strong> <br />
+
+					Global page styles and functions including partials.
+         		</p>
+          </div>
+
+
+          <div id="Javascript" class="section">
+          <h4 class="sectiontitle"><strong>Javascript</strong></h4>
+            <p>
+              <h3>Files</h3>
+          Every Javascript file is located inside of /js/ folder.<br />
+          <strong>script.js</strong><br />
+          This file is main javascript file used for managing functions.<br />
+            </p>
+          </div>
+
+
+          <div id="Voice" class="section">
+          <h4 class="sectiontitle"><strong>Voice Control</strong></h4>
+            <p>
+              <h3>Adding New Commands</h3>
+              On line 319 of <strong>/js/script.js</strong> begins function responsible for voice commands. To edit them, simply delete or add new commands object. For example, if you only want two commands, replace lines from 329 to 369 (var commands) with:
+              <code>
+                var commands = { <br />
+                  'services': function() {<br />
+                      goTo("#services");<br />
+<br />
+                  },<br />
+<br />
+                  'portfolio': function() {<br />
+                      goTo("#portfolio");<br />
+<br />
+                  }<br />
+                  };<br />
+              </code>
+            </p>
+          </div>
+
+
+          <div id="fonts" class="section">
+         	<h4 class="sectiontitle"><strong>Fonts used</strong></h4>
+         		<p>
+         			<h3>Lato</h3>
+
+					The ONE is using only one font for text display. <br />
+					You can get more details on using Lato font here: https://www.google.com/fonts/specimen/Lato <br /><br />
+
+					<h3>Font Awesome</h3>
+
+					You can use both Bootstrap Glyphicons and Font Awesome in The ONE, as they both are included. However in demo we only use Font Awesome which is much bigger library. You can get more informations here:  <br />
+					http://www.fortawesome.github.io/Font-Awesome/ <br />
+         		</p>
+          </div>
+
+
+          <div id="sources" class="section">
+         	<h4 class="sectiontitle"><strong>Sources and Credits</strong></h4>
+         		<p>
+         			<strong>Bootstrap 3.1.1</strong> <br />
+
+					http://getbootstrap.com/  <br />
+
+					<strong>Classie</strong><br />
+
+					https://github.com/desandro/classie<br />
+
+					<strong>Swiper</strong><br />
+
+					http://www.idangero.us/sliders/swiper/<br />
+
+					<strong>jQuery</strong><br />
+
+					http://jquery.com/<br />
+
+					<strong>niceScroll</strong><br />
+
+					http://areaaperta.com/nicescroll/<br />
+
+					<strong>modernizr</strong><br />
+
+					http://modernizr.com/<br />
+
+					<strong>snap.svg</strong><br />
+
+					http://snapsvg.io/<br />
+         		</p>
+          </div>
+
+
+          <div id="contact" class="section">
+         	<h4 class="sectiontitle"><strong>Contact</strong></h4>
+         		<p>
+         			Feel free to contact us with any questions regarding The ONE, we’ll answer them happily. <br />
+
+					tomaszfrankowski@gmail.com
+         		</p>
+          </div>
+
+
+
+            
+        </div>      
+        
+	</div>
+
+</div><!-- #page -->    
+</body>
+</html>

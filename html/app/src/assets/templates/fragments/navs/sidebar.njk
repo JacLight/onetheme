@@ -1,0 +1,55 @@
+
+<!--
+#if ($theme_settings.lateral-nav == "Right")
+	#set ($lat_nav_pos = "right-nav")
+#else
+	#set ($lat_nav_pos = "left-nav")
+#end
+-->
+<div id="cd-lateral-nav-wrapper">
+	<a href="#cd-nav" class="cd-nav-trigger $lat_nav_pos">Menu
+	  <span class="cd-nav-icon"></span>
+
+	  <svg x="0px" y="0px" width="45px" height="45px" viewBox="0 0 54 54">
+	    <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+	  </svg>
+	</a>
+
+<nav id="cd-lateral-nav" class="$lat_nav_pos">
+	<ul class="cd-navigation">
+
+		<!--#foreach ($nav_item in $nav_items)-->
+			<li class="item-menu #if ($nav_item.hasChildren()) item-has-children #end">
+				<a href="$nav_item.getURL()" $nav_item.getTarget()>
+					<span>$nav_item.icon() $nav_item.getName()</span>
+				</a>
+				<!--#if ($nav_item.hasChildren())-->
+				<ul class="sub-menu">
+						<!--#foreach ($nav_child in $nav_item.getChildren())-->
+						<!--#if ($nav_child.isSelected())
+							<li class="selected sub">-->
+						<!--#else-->
+							<li class=" sub">
+						<!--#end-->
+						<a href="$nav_child.getURL()" $nav_child.getTarget()>$nav_child.getName()</a>
+						</li>
+					<!--#end-->
+					</ul>
+				<!--#end-->
+			</li>
+		<!--#end-->
+
+	<ul class="cd-navigation cd-single-item-wrapper">
+		<!--#if ($is_signed_in)-->
+				<li><a href="#0">$user.getGreeting()</a></li>
+				<li><a href="$themeDisplay.getURLSignOut()">Sign Out</a></li>
+		<!--#else-->
+			<li class="cd-navigation-sign-in"><a href="$themeDisplay.getURLSignIn()">Sign In</a></li>
+		<!--#end-->
+	</ul> <!-- cd-single-item-wrapper -->
+
+	<div id="cd-lateral-nav-social" class="cd-navigation socials">
+
+	</div>
+</nav>
+<div>

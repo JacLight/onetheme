@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700' rel='stylesheet' type='text/css'>
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+	$theme.include($top_head_include)
+
+	#if ($theme_settings.lateral-nav == "Left" || $theme_settings.lateral-nav == "Right")
+		<link href='$css_folder/lateral_nav.css' rel='stylesheet' type='text/css'>
+	#end
+
+</head>
+
+<body class="$css_class">
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+#dockbar()
+
+<div class="container-fluid" id="wrapper">
+
+	#if ($theme_settings.show-headbar == true)
+		<header id="banner" role="banner">
+            <div id="banner-inner">
+                #if ($theme_settings.show-header-content == true)
+                    #set ($header_content = "#getwebcontent( 'header_content' )")
+                    <div class='header_content'>$header_content</div>
+                #end
+
+                #if ($theme_settings.show-logo == true)
+                    <div id="heading">
+                        <h1 class="site-title">
+                            <a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+                                <img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+
+                                #if ($theme_settings.show-site-name == true)
+                                    <span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+                                        $site_name
+                                    </span>
+                                #end
+                            </a>
+
+                        </h1>
+
+                        #if ($theme_settings.show-page-title == true)
+                            <h2 class="page-title">
+                                <span>$the_title</span>
+                            </h2>
+                        #end
+                    </div>
+                #end
+
+                #if ($theme_settings.show-header-socialshare == true)
+                    <div id="header-socialshare"></div>
+                #end
+
+                #if ($theme_settings.show-search == true)
+                    <div class="page-search">
+                        $theme.search()
+                        ##$theme.journalContentSearch()
+                    </div>
+                #end
+
+                #if($languageDisplayStyle > 10)
+                    <div class="Language-choices">
+                        $taglibLiferay.language("fm",null,"languageId",$languageDisplayStyle)
+                    </div>
+                #end
+
+                #if (($has_navigation || $is_signed_in) && $theme_settings.show-navbar == true)
+                    #parse ("$full_templates_path/navigation.vm")
+                #end
+            </div>
+		</header>
+	#end
+	<div id="content">
+        <div id="content-inner">
+			#if ($theme_settings.show-breadcrumb == true)
+				<nav id="breadcrumbs">#breadcrumbs()</nav>
+			#end
+
+			#if ($selectable)
+				$theme.include($content_include)
+			#else
+				$portletDisplay.recycle()
+
+				$portletDisplay.setTitle($the_title)
+
+				$theme.wrapPortlet("portlet.vm", $content_include)
+			#end
+	   </div>
+	</div>
+
+	#if ($theme_settings.show-footer  == true)
+		<div style="clear:both"></div>
+		<footer id="footer" role="contentinfo">
+			<div id="footer-inner">
+                #if ($theme_settings.show-footer-logo == true)
+                    <div id="footer-logo">
+                        <a  href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+                            <img alt="$logo_description" src="$site_logo" />
+                        </a>
+                    </div>
+                #end
+
+				#if ($theme_settings.show-footer-content == true)
+					#set ($footer_content = "#getwebcontent( 'footer_content' )")
+					<div class='footer_content'>$footer_content</div>
+				#end
+
+				#if ($theme_settings.show-footer-contact-form == true)
+					<div class='quick_contact'>
+						#set ($VOID = $velocityPortletPreferences.setValue('portlet-setup-show-borders', 'false'))
+						#set ($VOID = $velocityPortletPreferences.setValue('subject', 'Quick Contact'))
+						#set ($VOID = $velocityPortletPreferences.setValue('title', 'Quick Contact'))
+						#set ($myPortletId = "1_WAR_webformportlet_INSTANCE_" + $page_instance_name + "quickcontact")
+						$theme.runtime($myPortletId, '', $velocityPortletPreferences.toString())
+						#set ($VOID = $velocityPortletPreferences.reset())
+					</div>
+				#end
+
+				#if ($theme_settings.show-footer-socialshare == true)
+					<div id="footer-socialshare"></div>
+				#end
+
+				#if ($theme_settings.show-footer-navbar == true)
+					#set ($footer_navbar = "#getnavbar()")
+					<div class='footer-navbar'>$footer_navbar</div>
+				#end
+
+				#if ($theme_settings.show-copyright == true)
+					<div class="footer-copyright">$footer_copyright</div>
+				#end
+
+				#if ($theme_settings.show-legal == true)
+					<a href="/legal">#language ("legal")</a>
+				#end
+
+				<p class="powered-by">
+					#language ("powered-by") <a href="http://www.websitemint.net" rel="external"><img src='$images_folder/custom/icon.png' /></a>
+				</p>
+				<div style='clear:both'></div>
+			</div>
+		</footer>
+	#end
+</div>
+
+#if ($theme_settings.show-body-content == true)
+	#set ($body_content = "#getwebcontent( 'body_content' )")
+	<div class='body_content'>$body_content</div>
+#end
+
+#if ($theme_settings.lateral-nav == "Left" || $theme_settings.lateral-nav == "Right")
+	#parse ("$full_templates_path/navigation_lat.vm")
+#end
+
+$theme.include($body_bottom_include)
+$theme.include($bottom_include)
+
+</body>
+
+</html>

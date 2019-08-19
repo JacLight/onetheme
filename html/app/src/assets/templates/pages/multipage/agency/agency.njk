@@ -1,0 +1,39 @@
+{% include "./html-start.njk" %}
+
+<head>
+{% include "./html-head.njk" %}
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        {% block header %}
+        <header> 
+            <div class="logo">
+                <img src="http://localhost:3000/assets/images/layout_set_logo.png" alt="Canvas Logo">
+                <h1>Company Name</h1>
+            </div>
+            {% include "./navs/main-agency.njk" %}
+        </header>
+        {% endblock %}
+
+        {% block banner %}
+        <section>
+            Banner
+        </section>
+        {% endblock %}
+
+        {% block content %}
+        <section>
+            Services
+        </section>
+        {% endblock %}
+
+
+        {% block footer %}
+        {% include "footers/footer-agency.njk" %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

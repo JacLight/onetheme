@@ -1,0 +1,258 @@
+@import "compass";
+@import "mixins";
+
+$dockbarGradientEnd: #C71212;
+$dockbarGradientStart: #DE1111;
+$navLinkColor: #f5f5f5;
+$navLinkHoverColor: #fff;
+$dockbarOpenGradientEnd: #DD0909;
+$dockbarOpenGradientStart: #F90E0E;
+
+.aui {
+    body{
+		background: #fde0c3 url(../images/custom/page.jpg) 0 0 repeat;
+		color: #333;
+		font-size: 12px;
+		font-weight: normal;
+		font-style: normal;
+		font-family: "Lucida Sans Unicode","Lucida Grande","Droid Sans",sans-serif;
+		letter-spacing: 0px;
+		line-height: 20px;
+		padding: 0;
+		margin: 0;
+
+        &:before{
+            background:transparent url(../images/custom/texture.jpg) repeat-x;
+            content: '';
+            display: block;
+            min-height: 890px;
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 100%;
+        }
+		.navbar-inner{
+			.page-search {
+	  			 display: none;
+	  		}
+		}
+
+		&.dockbar-transparent {
+			.dockbar {
+	   			background: transparent;
+	   			border-bottom: none;
+	   		}
+		}
+		&.hide-chat {
+			.chat-bar {
+	  			 display: none;
+	  		}
+	 	}&.hide-search {
+			.page-search {
+	  			 display: none;
+	  		}
+	 	}&.hide-language {
+			.language-choices {
+	  			 display: none;
+	  		}
+	 	}&.hide-login {
+			.sign-in {
+	  			 display: none;
+	  		}
+	 	}&.controls-hidden{
+	 		.nav-add-controls{
+	 			opacity: 0.2;
+	 		}
+	 	}&.controls-visible{
+	 		.nav-add-controls{
+	 			opacity: 1;
+	 		}
+	 	}
+	}
+    .page-search {
+        padding: 16px 10px 13px 10px;
+    }
+
+    #wrapper {
+		background: none;
+		margin: 0 auto;
+		max-width: 1000px;
+		position: relative;
+	}
+    .dockbar-user-notifications .dropdown-toggle .user-notifications-count {
+        background-color: transparent;
+    }
+    .portlet-borderless-container {
+        padding: 13px;
+        border: 2px solid #fff;
+        border-radius: 7px;
+        background: #F7F7F9;
+        box-shadow: 0 0 0 1px rgba(0,0,2,0.1), 0 1px 0 rgba(0,0,2,0.15), 0 1px 1px rgba(0,0,2,0.1);
+        text-shadow: 0 1px 0 rgba(253,253,255,1.0);
+    }
+
+
+    /* ---------- Doc Bar ---------- */
+    .dockbar-split {
+        .dockbar .navbar-inner .nav {
+            > li > a {
+                color: #FFF;
+            }
+            > li > a.user-notification-link{
+                padding: 5px 8px 4px 8px;
+            }
+        }
+    }
+
+    /* ---------- Main navigation ---------- */
+	#navigation {
+		.add-page-editor {
+			input {
+				margin-top: 0;
+			}
+		}
+
+		.brand {
+			padding: 0;
+			padding-right: 20px;
+			margin-left: 0;
+
+			img {
+				height: 40px;
+				width: auto;
+			}
+		}
+
+		.nav {
+			 display: table;
+
+			> li {
+				border-left: 1px solid #555;
+                display: table-cell;
+                text-align: center;
+                float: none;
+                width: 200px;
+				&.dropdown {
+					> .dropdown-toggle {
+						.caret {
+							border-bottom-color: #FFF;
+							border-top-color: #FFF;
+						}
+					}
+				}
+
+				&.open {
+					> a {
+						@include box-shadow(none);
+						background-color: inherit;
+						color: $navLinkColor;
+					}
+				}
+
+				&.active > a {
+					background-color: $dockbarGradientStart;
+				}
+				&:last-child{
+					border: 0;
+				}
+			}
+
+			> li > a {
+				padding: 4px 15px 5px;
+			}
+
+			.dropdown-menu {
+				@include border-radius(0);
+				@include border-bottom-left-radius(5px);
+    			@include border-bottom-right-radius(5px);
+				@include background-image(linear-gradient(#313E2E, #000));
+				border-width: 0;
+				margin: 0;
+
+				li {
+					border: 0;
+                    display: block;
+				}
+				&:after, &:before {
+					border-width: 0;
+				}
+
+				a {
+					color: $navLinkColor;
+					&:hover {
+						background: $dockbarGradientStart;
+						text-decoration: none;
+					}
+				}
+			}
+
+			> .active > a {
+				background-color: $dockbarGradientStart;
+
+				@include background-image(linear-gradient($dockbarGradientStart 0%, $dockbarGradientStart 47%, $dockbarGradientEnd 100%));
+				@include box-shadow(none);
+				@include filter-gradient($dockbarGradientStart, $dockbarGradientEnd, vertical);
+			}
+		}
+
+		.navbar-inner {
+			background: #333;
+			border-width: 0;
+			min-height: 36px;
+			@include border-radius(5px);
+			@include box-shadow(none);
+			@include background-image(linear-gradient(#313E2E, #000));
+
+			li a {
+				color: $navLinkColor;
+				@include text-shadow(none);
+                text-transform: uppercase;
+                font-family: tahoma;
+                font-weight: bold;
+                padding: 7px 10px 10px 10px;
+                font-size: 12px;
+			}
+		}
+
+		&:after{
+			clear: both;
+			display: block;
+			content: '';
+		}
+	}
+
+	.modify-pages .delete-tab {
+		background: #555;
+		border: 2px solid #FFF;
+		color: #FFF;
+		font-size: 16px;
+		padding: 4px;
+		right: -10px;
+		top: 0;
+		z-index: 300;
+	}
+
+     /* ---------- Main navigation ---------- */
+    footer{
+        text-align: center;
+        .footer-navbar {
+          ul{
+            display: table;
+            margin: 0 auto;
+            padding: 0;
+          }
+
+          li {
+            list-style: none;
+            float: left;
+            margin: 2px 10px;
+          }
+
+          &:after{
+            clear: both;
+            display: block;
+            content: '';
+          }
+        }
+    }
+}

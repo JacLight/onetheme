@@ -1,0 +1,51 @@
+{% include "./html-start.njk" %}
+
+<head>
+{% include "./html-head.njk" %}
+
+ <!-- CSS Main Nav -->
+<link href='http://localhost:3000/assets/styles/css/navs/main.css' rel='stylesheet' type='text/css'>
+
+ <!-- CSS Sidebar Nav -->
+ <link href='http://localhost:3000/assets/styles/css/navs/sidebar.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS Footer Nav -->
+  <link href='http://localhost:3000/assets/styles/css/navs/footer.css' rel='stylesheet' type='text/css'>
+
+   <!-- CSS Social Share  -->
+  <link rel="stylesheet" href="http://localhost:3000/assets/modules/rrssb/css/rrssb.css" />
+  <link rel="stylesheet" type="text/css" href="http://localhost:3000/assets/modules/jssocials/jssocials.css" />
+  <link rel="stylesheet" type="text/css" href="http://localhost:3000/assets/modules/jssocials/jssocials-theme-flat.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+  {% include "./body-start.njk" %}
+  {% include "./headers/header.njk" %}
+    <div>
+      {% include "./view.njk" %}
+      {% include "./var.njk" %}
+
+      <!-- Site Links-->
+      <div >
+      <h2>Site Links</h2>
+      <a href="multipage/agency/index.html">Agency</a> 
+    </div>
+      <!-- Add your page content here -->
+      <p>Travel, Gym, Media Agency, Music, Barber,  Pets, Portfolio, Constructuion, Seo, App Landing, E-Commere, Cource
+        Conferance, Non-Profit,
+        Magazine, Resume, Cage, SPA, Wedding, Shopk, Events, Car Listing, Business, Real Estate, Medical, One Page,
+        Corporate, CoWorking, Recipies,
+        Ajax, Rental, News, Photography, Media Agency, Blog, Restaurant</p>
+
+      <p>All the stuffs you need, none of the clusters</p>
+
+      <p>Award winning Multi-Purpose & Powerful Bootstrap 4.x based Template with over 100 Pages, Multi-Page & One-Page
+        Layouts with over 1000 UI Elements Features.</p>
+
+        {% include "./navs/sidebar.njk" %}
+    </div>
+    {% include "./footers/footer2.njk" %}
+    {% include "./body-end.njk" %}
+  </div>
+</body>

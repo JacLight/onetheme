@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+#dockbar()
+
+<div class="container-fluid" id="wrapper">
+	#if ($theme_settings.show-headbar == true)  <!-- Show or Hide the Entire Site Header -->
+		<header id="banner" role="banner">
+		
+		#if ($theme_settings.header-content)
+				#set ($header_content = $journalContentUtil.getContent($group_id, $theme_settings.header-content, null, "$locale", $theme_display))
+				#if ($header_content)
+					<div class="header-content">$header_content</div>
+				#end
+			#end
+			
+			
+			#if ($theme_settings.show-logo == true)
+				<div id="heading">
+					<h1 class="site-title">
+						<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+							<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+		
+							#if ($theme_settings.show-site-name == true)
+								<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+									$site_name
+								</span>
+							#end
+						</a>
+		
+					</h1>
+		
+					<h2 class="page-title">
+						<span>$the_title</span>
+					</h2>
+				</div>
+			#end
+	
+			#if (($has_navigation || $is_signed_in) && $theme_settings.show-navbar == true)
+				#parse ("$full_templates_path/navigation.vm")
+			#end
+		</header>
+	#end
+	<div id="content">
+		
+			#if ($theme_settings.show-breadcrumb == true)
+				<nav id="breadcrumbs">#breadcrumbs()</nav>
+			#end
+	
+			#if ($selectable)
+				$theme.include($content_include)
+			#else
+				$portletDisplay.recycle()
+	
+				$portletDisplay.setTitle($the_title)
+	
+				$theme.wrapPortlet("portlet.vm", $content_include)
+			#end
+	
+	</div>
+	
+	
+</div>
+#if ($theme_settings.show-footer  == true)
+		#parse ("$full_templates_path/footer.vm")
+	#end
+	
+#if ($theme_settings.body-content != '')
+	<div id='body-content'>
+		#set ($body_content = $journalContentUtil.getContent($group_id, $theme_settings.body-content, null, "$locale", $theme_display))
+		#if ($body_content)
+    		$body_content
+		#else
+			$theme_settings.body-content
+		#end
+	</div>
+#end
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

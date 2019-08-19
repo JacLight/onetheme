@@ -1,0 +1,64 @@
+{
+	"layouts": [
+		{
+			"friendlyURL": "/home",
+			"name": "Home",
+			"title": "Home"
+		},
+		{
+			"friendlyURL": "/features",
+			"name": "Features",
+			"title": "Features"
+		},
+		{
+			"friendlyURL": "/get-started",
+			"name": "Get Started",
+			"title": "Get Started"
+		},
+		{
+			"friendlyURL": "/pricing",
+			"name": "Pricing & Coverage",
+			"title": "Pricing & Coverage"
+		},
+		{
+			"friendlyURL": "/blog",
+			"name": "Blog",
+			"title": "Blog"
+		},
+		{
+			"friendlyURL": "/help",
+			"name": "Help",
+			"title": "Help"
+		},		
+		{
+			"friendlyURL": "/about-us",
+			"name": "About Us",
+			"title": "About Us"
+		},
+		{
+			"friendlyURL": "/contact-us",
+			"name": "Contact Us",
+			"title": "Contact Us"
+		}
+	],
+	"privatePages": [
+		{
+			"columns": [
+				[
+					{
+						"portletId": "58"
+					}
+				],
+				[
+					{
+						"portletId": "47"
+					}
+				]
+			],
+			"friendlyURL": "/home",
+			"name": "Welcome",
+			"title": "Welcome"
+		}
+	],
+	"layoutTemplateId": "1_3_1_columns"
+}

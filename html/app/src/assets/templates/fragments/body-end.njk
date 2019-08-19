@@ -1,0 +1,56 @@
+  
+{% include "./back-to-top.njk" %}
+{% include "./ajax-loader.njk" %}
+
+  <!-- JS Global Compulsory -->
+  <script src="http://localhost:3000/assets/modules/modernizr.min.js"></script>
+  <script src="http://localhost:3000/assets/modules/jquery.min.js"></script>
+  <script src="http://localhost:3000/assets/modules/jquery-migrate.min.js"></script>
+  <script src="http://localhost:3000/assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <script src="http://localhost:3000/assets/modules/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.localscroll.min.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.easing.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.ui.touch-punch.min.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/modules/jquery.nicescroll.min.js"></script>
+
+  <!-- JS One Theme -->
+  <script src="http://localhost:3000/assets/scripts/src/main.js"></script>
+
+  <!-- JS Custom -->
+  <script src="http://localhost:3000/assets/scripts/src/custom.js"></script>
+
+  <!-- JS Custom Notification -->
+  <script type="text/javascript" src="http://localhost:3000/assets/scripts/src/navs/main.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/assets/scripts/src/navs/sidebar.js"></script>
+  
+ <!-- JS Social Share -->
+  <script src="http://localhost:3000/assets/modules/rrssb/js/rrssb.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+    
+      $('.rrssb-buttons').rrssb({
+        title: 'This is the email subject and/or tweet text',
+        url: 'https://rrssb.netlify.com/',
+    
+        description: 'Longer description used with some providers',
+        emailBody: 'Usually email body is just the description + url, but you can customize it if you want'
+      });
+    });
+    </script>
+
+<script src="http://localhost:3000/assets/modules/jssocials/jssocials.min.js"></script>
+<script>
+    $("#share").jsSocials({
+        shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+    });
+</script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+      </script>
+      <script src="https:://www.google-analytics.com/analytics.js" async></script>
